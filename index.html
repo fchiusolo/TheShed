@@ -5,29 +5,131 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="The Shed - A small workshop where independent software projects are built">
     <title>The Shed</title>
+
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['-apple-system', 'BlinkMacSystemFont', 'San Francisco',
+                     'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif']
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- Smooth Scroll -->
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+      html {
+        scroll-behavior: smooth;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
         }
-
-        body, html {
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-
-        .fullscreen-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            display: block;
-        }
+      }
     </style>
 </head>
-<body>
-    <img src="assets/images/the-shed.png" alt="The Shed - A whimsical workshop illustration" class="fullscreen-image">
+<body class="antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 right-0 z-50 p-4 sm:p-6">
+      <ul class="flex gap-4 text-xs sm:gap-6 sm:text-sm">
+        <li><a href="#about" class="hover:text-gray-600 transition-colors">About</a></li>
+        <li><a href="#projects" class="hover:text-gray-600 transition-colors">Projects</a></li>
+        <li><a href="#contact" class="hover:text-gray-600 transition-colors">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main>
+
+      <!-- Hero Section -->
+      <section id="hero" class="relative h-screen w-full">
+        <img
+          src="assets/images/the-shed.png"
+          alt="The Shed - A whimsical workshop illustration"
+          class="w-full h-full object-cover object-center"
+          loading="eager"
+        />
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="min-h-screen flex items-center justify-center px-6 py-20">
+        <div class="max-w-2xl">
+          <h2 class="text-2xl sm:text-3xl mb-6">About The Shed</h2>
+          <div class="space-y-4 text-base sm:text-lg leading-relaxed text-gray-700">
+            <p>The Shed is a place where software tools are built to solve common problems.</p>
+            <p>Ideas usually start small: noticing something that could work better, taking it apart, and trying to put it back together in a simpler way. Projects focus on turning those ideas into tools that are practical, focused, and ready to be used.</p>
+            <p>The Shed exists for the joy of building things that work. It approaches problems with curiosity, experimentation, and a hands-on mindset, aiming to create solutions that feel thoughtful and straightforward.</p>
+            <p>What matters is making something useful — and enjoying the process of making it.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="min-h-screen px-6 py-20">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-2xl sm:text-3xl mb-12">Projects</h2>
+          <div class="grid gap-6 md:grid-cols-2 md:gap-8">
+
+            <!-- Project Card 1 -->
+            <article class="border border-gray-200 p-6 rounded-lg">
+              <h3 class="text-xl mb-3">Project One</h3>
+              <p class="text-gray-600 mb-4">A focused tool designed to solve a specific problem with clarity and simplicity.</p>
+              <div class="flex gap-4 text-sm">
+                <a href="projects/project-one/" class="underline hover:text-gray-600 transition-colors">Learn more</a>
+                <a href="#" class="underline hover:text-gray-600 transition-colors">Repository</a>
+              </div>
+            </article>
+
+            <!-- Project Card 2 -->
+            <article class="border border-gray-200 p-6 rounded-lg">
+              <h3 class="text-xl mb-3">Project Two</h3>
+              <p class="text-gray-600 mb-4">A practical application that addresses everyday challenges with a straightforward approach.</p>
+              <div class="flex gap-4 text-sm">
+                <a href="projects/project-two/" class="underline hover:text-gray-600 transition-colors">Learn more</a>
+                <a href="#" class="underline hover:text-gray-600 transition-colors">Repository</a>
+              </div>
+            </article>
+
+            <!-- Project Card 3 -->
+            <article class="border border-gray-200 p-6 rounded-lg">
+              <h3 class="text-xl mb-3">Project Three</h3>
+              <p class="text-gray-600 mb-4">An experimental solution built from curiosity and a desire to understand how things work.</p>
+              <div class="flex gap-4 text-sm">
+                <a href="projects/project-three/" class="underline hover:text-gray-600 transition-colors">Learn more</a>
+                <a href="#" class="underline hover:text-gray-600 transition-colors">Repository</a>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="min-h-screen flex items-center justify-center px-6 py-20">
+        <div class="max-w-xl text-center">
+          <h2 class="text-2xl sm:text-3xl mb-6">Contact</h2>
+          <p class="text-base sm:text-lg mb-6 text-gray-700">
+            For questions, feedback, or potential collaborations:
+          </p>
+          <a href="mailto:hello@theshed.me" class="text-base sm:text-lg underline hover:text-gray-600 transition-colors">
+            hello@theshed.me
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center text-sm text-gray-500">
+      <p>The Shed — A small workshop for independent software projects</p>
+    </footer>
+
 </body>
 </html>

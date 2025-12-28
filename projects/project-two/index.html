@@ -17,52 +17,65 @@
             fontFamily: {
               sans: ['-apple-system', 'BlinkMacSystemFont', 'San Francisco',
                      'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif']
+            },
+            colors: {
+              'sky-blue': '#7BA3C0',
+              'warm-orange': '#E89B6C',
+              'sage-green': '#6B9B7E',
+              'charcoal': '#3A3A3A',
+              'warm-gray': '#6B6B6B',
+              'light-cream': '#F8F6F3',
+              'border-gray': '#E0DDD9',
+              'golden-yellow': '#F4C45E',
+              'soft-blue-gray': '#8FA8BC'
             }
           }
         }
       }
     </script>
 </head>
-<body class="antialiased">
+<body class="antialiased bg-light-cream text-charcoal">
 
     <!-- Navigation -->
     <nav class="fixed top-0 left-0 z-50 p-4 sm:p-6">
-      <a href="../../" class="text-sm underline hover:text-gray-600 transition-colors">← Back to The Shed</a>
+      <a href="../../" class="text-sm text-sky-blue hover:text-warm-orange transition-colors">← Back to The Shed</a>
     </nav>
 
     <main class="min-h-screen px-6 py-20">
       <article class="max-w-3xl mx-auto pt-12">
-        <h1 class="text-3xl sm:text-4xl mb-6">Project Two</h1>
+        <div class="bg-white rounded-lg shadow-lg p-8 sm:p-12">
+          <h1 class="text-3xl sm:text-4xl mb-6 text-charcoal">Project Two</h1>
 
-        <div class="space-y-6 text-base sm:text-lg leading-relaxed text-gray-700">
+          <div class="space-y-6 text-base sm:text-lg leading-relaxed text-warm-gray">
           <section>
-            <h2 class="text-xl sm:text-2xl mb-4 text-gray-900">What it is</h2>
+            <h2 class="text-xl sm:text-2xl mb-4 text-charcoal">What it is</h2>
             <p>Project Two is a practical application that addresses everyday challenges with a straightforward approach. It's designed to make common tasks easier by removing friction and focusing on what matters.</p>
           </section>
 
           <section>
-            <h2 class="text-xl sm:text-2xl mb-4 text-gray-900">Why it exists</h2>
+            <h2 class="text-xl sm:text-2xl mb-4 text-charcoal">Why it exists</h2>
             <p>The idea emerged from repeated encounters with the same problem. By taking the time to understand the underlying cause, it became possible to create a solution that tackles the root issue rather than just the symptoms.</p>
           </section>
 
           <section>
-            <h2 class="text-xl sm:text-2xl mb-4 text-gray-900">How it works</h2>
+            <h2 class="text-xl sm:text-2xl mb-4 text-charcoal">How it works</h2>
             <p>The application follows a content-first philosophy. Every feature serves a clear purpose, and the interface stays out of the way to let users focus on their work.</p>
           </section>
 
           <section>
-            <h2 class="text-xl sm:text-2xl mb-4 text-gray-900">Links</h2>
+            <h2 class="text-xl sm:text-2xl mb-4 text-charcoal">Links</h2>
             <div class="flex gap-6 text-base">
-              <a href="#" class="underline hover:text-gray-600 transition-colors">Repository</a>
-              <a href="#" class="underline hover:text-gray-600 transition-colors">Documentation</a>
+              <a href="#" class="text-sky-blue hover:text-warm-orange transition-colors">Repository</a>
+              <a href="#" class="text-sky-blue hover:text-warm-orange transition-colors">Documentation</a>
             </div>
           </section>
+          </div>
         </div>
       </article>
     </main>
 
     <!-- Footer -->
-    <footer class="py-8 text-center text-sm text-gray-500">
+    <footer class="py-8 text-center text-sm text-warm-gray">
       <p>The Shed — A small workshop for independent software projects</p>
     </footer>
 

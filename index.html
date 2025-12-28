@@ -17,6 +17,17 @@
             fontFamily: {
               sans: ['-apple-system', 'BlinkMacSystemFont', 'San Francisco',
                      'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif']
+            },
+            colors: {
+              'sky-blue': '#7BA3C0',
+              'warm-orange': '#E89B6C',
+              'sage-green': '#6B9B7E',
+              'charcoal': '#3A3A3A',
+              'warm-gray': '#6B6B6B',
+              'light-cream': '#F8F6F3',
+              'border-gray': '#E0DDD9',
+              'golden-yellow': '#F4C45E',
+              'soft-blue-gray': '#8FA8BC'
             }
           }
         }
@@ -35,14 +46,14 @@
       }
     </style>
 </head>
-<body class="antialiased">
+<body class="antialiased bg-light-cream text-charcoal">
 
     <!-- Navigation -->
     <nav class="fixed top-0 right-0 z-50 p-4 sm:p-6">
       <ul class="flex gap-4 text-xs sm:gap-6 sm:text-sm">
-        <li><a href="#about" class="hover:text-gray-600 transition-colors">About</a></li>
-        <li><a href="#projects" class="hover:text-gray-600 transition-colors">Projects</a></li>
-        <li><a href="#contact" class="hover:text-gray-600 transition-colors">Contact</a></li>
+        <li><a href="#about" class="text-sky-blue hover:text-warm-orange transition-colors">About</a></li>
+        <li><a href="#projects" class="text-sky-blue hover:text-warm-orange transition-colors">Projects</a></li>
+        <li><a href="#contact" class="text-sky-blue hover:text-warm-orange transition-colors">Contact</a></li>
       </ul>
     </nav>
 
@@ -61,8 +72,8 @@
       <!-- About Section -->
       <section id="about" class="px-6 py-20">
         <div class="max-w-2xl mx-auto">
-          <h2 class="text-2xl sm:text-3xl mb-6 text-center">About The Shed</h2>
-          <div class="space-y-4 text-base sm:text-lg leading-relaxed text-gray-700">
+          <h2 class="text-2xl sm:text-3xl mb-6 text-center text-charcoal">About The Shed</h2>
+          <div class="space-y-4 text-base sm:text-lg leading-relaxed text-warm-gray">
             <p>The Shed is a place where software tools are built to solve common problems.</p>
             <p>Ideas usually start small: noticing something that could work better, taking it apart, and trying to put it back together in a simpler way. Projects focus on turning those ideas into tools that are practical, focused, and ready to be used.</p>
             <p>The Shed exists for the joy of building things that work. It approaches problems with curiosity, experimentation, and a hands-on mindset, aiming to create solutions that feel thoughtful and straightforward.</p>
@@ -74,36 +85,36 @@
       <!-- Projects Section -->
       <section id="projects" class="px-6 py-20">
         <div class="max-w-4xl mx-auto">
-          <h2 class="text-2xl sm:text-3xl mb-12 text-center">Projects</h2>
+          <h2 class="text-2xl sm:text-3xl mb-12 text-center text-charcoal">Projects</h2>
           <div class="grid gap-6 md:grid-cols-2 md:gap-8">
 
             <!-- Project Card 1 -->
-            <article class="border border-gray-200 p-6 rounded-lg">
-              <h3 class="text-xl mb-3">Project One</h3>
-              <p class="text-gray-600 mb-4">A focused tool designed to solve a specific problem with clarity and simplicity.</p>
+            <article class="border border-border-gray p-6 rounded-lg bg-white">
+              <h3 class="text-xl mb-3 text-charcoal">Project One</h3>
+              <p class="text-warm-gray mb-4">A focused tool designed to solve a specific problem with clarity and simplicity.</p>
               <div class="flex gap-4 text-sm">
-                <a href="projects/project-one/" class="underline hover:text-gray-600 transition-colors">Learn more</a>
-                <a href="#" class="underline hover:text-gray-600 transition-colors">Repository</a>
+                <a href="projects/project-one/" class="text-sky-blue hover:text-warm-orange transition-colors">Learn more →</a>
+                <a href="#" class="text-sky-blue hover:text-warm-orange transition-colors">Repository</a>
               </div>
             </article>
 
             <!-- Project Card 2 -->
-            <article class="border border-gray-200 p-6 rounded-lg">
-              <h3 class="text-xl mb-3">Project Two</h3>
-              <p class="text-gray-600 mb-4">A practical application that addresses everyday challenges with a straightforward approach.</p>
+            <article class="border border-border-gray p-6 rounded-lg bg-white">
+              <h3 class="text-xl mb-3 text-charcoal">Project Two</h3>
+              <p class="text-warm-gray mb-4">A practical application that addresses everyday challenges with a straightforward approach.</p>
               <div class="flex gap-4 text-sm">
-                <a href="projects/project-two/" class="underline hover:text-gray-600 transition-colors">Learn more</a>
-                <a href="#" class="underline hover:text-gray-600 transition-colors">Repository</a>
+                <a href="projects/project-two/" class="text-sky-blue hover:text-warm-orange transition-colors">Learn more →</a>
+                <a href="#" class="text-sky-blue hover:text-warm-orange transition-colors">Repository</a>
               </div>
             </article>
 
             <!-- Project Card 3 -->
-            <article class="border border-gray-200 p-6 rounded-lg">
-              <h3 class="text-xl mb-3">Project Three</h3>
-              <p class="text-gray-600 mb-4">An experimental solution built from curiosity and a desire to understand how things work.</p>
+            <article class="border border-border-gray p-6 rounded-lg bg-white">
+              <h3 class="text-xl mb-3 text-charcoal">Project Three</h3>
+              <p class="text-warm-gray mb-4">An experimental solution built from curiosity and a desire to understand how things work.</p>
               <div class="flex gap-4 text-sm">
-                <a href="projects/project-three/" class="underline hover:text-gray-600 transition-colors">Learn more</a>
-                <a href="#" class="underline hover:text-gray-600 transition-colors">Repository</a>
+                <a href="projects/project-three/" class="text-sky-blue hover:text-warm-orange transition-colors">Learn more →</a>
+                <a href="#" class="text-sky-blue hover:text-warm-orange transition-colors">Repository</a>
               </div>
             </article>
 
@@ -114,11 +125,11 @@
       <!-- Contact Section -->
       <section id="contact" class="px-6 py-20">
         <div class="max-w-xl mx-auto text-center">
-          <h2 class="text-2xl sm:text-3xl mb-6 text-center">Contact</h2>
-          <p class="text-base sm:text-lg mb-6 text-gray-700">
+          <h2 class="text-2xl sm:text-3xl mb-6 text-center text-charcoal">Contact</h2>
+          <p class="text-base sm:text-lg mb-6 text-warm-gray">
             For questions, feedback, or potential collaborations:
           </p>
-          <a href="mailto:hello@theshed.me" class="text-base sm:text-lg underline hover:text-gray-600 transition-colors">
+          <a href="mailto:hello@theshed.me" class="text-base sm:text-lg text-sky-blue hover:text-warm-orange transition-colors">
             hello@theshed.me
           </a>
         </div>
@@ -127,7 +138,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="py-8 text-center text-sm text-gray-500">
+    <footer class="py-8 text-center text-sm text-warm-gray">
       <p>The Shed — A small workshop for independent software projects</p>
     </footer>
 

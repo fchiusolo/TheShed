@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Project Three - An experimental solution from The Shed">
+    <title>Project Three - The Shed</title>
+
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['-apple-system', 'BlinkMacSystemFont', 'San Francisco',
+                     'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif']
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 z-50 p-4 sm:p-6">
+      <a href="../../" class="text-sm underline hover:text-gray-600 transition-colors">← Back to The Shed</a>
+    </nav>
+
+    <main class="min-h-screen px-6 py-20">
+      <article class="max-w-3xl mx-auto pt-12">
+        <h1 class="text-3xl sm:text-4xl mb-6">Project Three</h1>
+
+        <div class="space-y-6 text-base sm:text-lg leading-relaxed text-gray-700">
+          <section>
+            <h2 class="text-xl sm:text-2xl mb-4 text-gray-900">What it is</h2>
+            <p>Project Three is an experimental solution built from curiosity and a desire to understand how things work. It explores new approaches to familiar problems, testing ideas that might lead somewhere interesting.</p>
+          </section>
+
+          <section>
+            <h2 class="text-xl sm:text-2xl mb-4 text-gray-900">Why it exists</h2>
+            <p>This project came from asking "what if?" and being willing to explore the answer. It's less about solving an immediate problem and more about learning through building, discovering what works by trying things out.</p>
+          </section>
+
+          <section>
+            <h2 class="text-xl sm:text-2xl mb-4 text-gray-900">How it works</h2>
+            <p>The solution takes an experimental approach, trying different methods and learning from the results. It's built with a hands-on mindset, where understanding comes from actually making things and seeing how they behave.</p>
+          </section>
+
+          <section>
+            <h2 class="text-xl sm:text-2xl mb-4 text-gray-900">Links</h2>
+            <div class="flex gap-6 text-base">
+              <a href="#" class="underline hover:text-gray-600 transition-colors">Repository</a>
+              <a href="#" class="underline hover:text-gray-600 transition-colors">Documentation</a>
+            </div>
+          </section>
+        </div>
+      </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center text-sm text-gray-500">
+      <p>The Shed — A small workshop for independent software projects</p>
+    </footer>
+
+</body>
+</html>

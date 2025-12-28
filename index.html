@@ -34,7 +34,7 @@
       }
     </script>
 
-    <!-- Smooth Scroll -->
+    <!-- Smooth Scroll & Animations -->
     <style>
       html {
         scroll-behavior: smooth;
@@ -43,6 +43,20 @@
         html {
           scroll-behavior: auto;
         }
+        .scroll-bounce {
+          animation: none !important;
+        }
+      }
+      @keyframes bounce {
+        0%, 100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+      .scroll-bounce {
+        animation: bounce 2s ease-in-out infinite;
       }
     </style>
 </head>
@@ -67,6 +81,12 @@
           class="w-full h-full object-cover object-center"
           loading="eager"
         />
+        <!-- Scroll Down Button -->
+        <a href="#about" class="absolute bottom-8 left-1/2 -translate-x-1/2 w-14 h-14 flex items-center justify-center bg-light-cream/90 hover:bg-warm-orange rounded-full transition-all scroll-bounce group">
+          <svg class="w-6 h-6 stroke-charcoal group-hover:stroke-white transition-colors" fill="none" stroke-width="3" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 5v14M19 12l-7 7-7-7"/>
+          </svg>
+        </a>
       </section>
 
       <!-- About Section -->

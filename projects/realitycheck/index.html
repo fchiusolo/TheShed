@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reality Check</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-blue-300 via-blue-400 to-blue-500">
+
+  <!-- Back to The Shed -->
+  <nav class="fixed top-0 left-0 z-50 p-4 sm:p-6">
+    <a href="../../" class="text-white/90 hover:text-white transition-colors text-sm sm:text-base">
+      ← The Shed
+    </a>
+  </nav>
+
+  <!-- Main Input Screen -->
+  <div id="inputScreen" class="flex items-center justify-center min-h-screen px-4">
+    <div class="max-w-2xl w-full text-center">
+      <h1 class="text-4xl md:text-5xl font-light text-white mb-4">
+        Have doubts about a place?
+      </h1>
+      <p class="text-lg md:text-xl text-white/90 mb-12 font-light">
+        Understand what to really expect before deciding.
+      </p>
+
+      <div class="space-y-4">
+        <input
+          type="text"
+          id="placeInput"
+          placeholder="e.g. Louvre, Caminito, Barranco de las Vacas"
+          class="w-full px-6 py-4 text-lg rounded-lg border-none focus:outline-none focus:ring-2 focus:ring-amber-300 text-gray-800"
+        />
+        <div class="flex justify-center">
+          <button
+            id="checkButton"
+            class="bg-amber-100 hover:bg-amber-200 text-gray-800 font-medium px-6 py-2 rounded-lg transition-colors text-lg"
+          >
+            Check
+          </button>
+        </div>
+
+        <!-- Available places -->
+        <div class="mt-8 text-center">
+          <p class="text-white/70 text-sm mb-3">Available places:</p>
+          <div class="text-white/90 text-sm space-y-1">
+            <p>Louvre Museum</p>
+            <p>Caminito</p>
+            <p>Green Street</p>
+            <p>Barranco de las Vacas</p>
+            <p>Cabo Polonio</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Loading Screen -->
+  <div id="loadingScreen" class="hidden flex items-center justify-center min-h-screen px-4">
+    <div class="text-center">
+      <div class="inline-block w-12 h-12 border-4 border-white/30 border-t-white rounded-full animate-spin mb-6"></div>
+      <p class="text-xl text-white font-light">
+        Looking for patterns in real experiences…
+      </p>
+    </div>
+  </div>
+
+  <!-- Modal Container -->
+  <div id="modalContainer" class="hidden fixed inset-0 bg-black/50 flex items-center justify-center p-4">
+    <div class="bg-white rounded-lg max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+      <!-- Modal content will be inserted here -->
+    </div>
+  </div>
+
+  <script src="mock-data.js"></script>
+  <script>
+    const inputScreen = document.getElementById('inputScreen');
+    const loadingScreen = document.getElementById('loadingScreen');
+    const modalContainer = document.getElementById('modalContainer');
+    const placeInput = document.getElementById('placeInput');
+    const checkButton = document.getElementById('checkButton');
+
+    // Handle search
+    function handleSearch() {
+      const query = placeInput.value.trim();
+
+      if (!query) {
+        return;
+      }
+
+      // Show loading
+      inputScreen.classList.add('hidden');
+      loadingScreen.classList.remove('hidden');
+
+      // Simulate loading delay
+      setTimeout(() => {
+        searchRealityCheck(query);
+      }, 800);
+    }
+
+    // Search for reality check (case-insensitive substring match)
+    function searchRealityCheck(query) {
+      const normalizedQuery = query.toLowerCase();
+      const result = REALITY_CHECKS.find(
+        check => check.place.name.toLowerCase().includes(normalizedQuery)
+      );
+
+      loadingScreen.classList.add('hidden');
+
+      if (result) {
+        showRealityCheckModal(result);
+      } else {
+        showNotFoundModal();
+      }
+    }
+
+    // Show Reality Check modal
+    function showRealityCheckModal(data) {
+      const modal = modalContainer.querySelector('.bg-white');
+
+      let html = `
+        <div class="p-8">
+          <!-- Header -->
+          <div class="mb-8">
+            <h2 class="text-3xl font-light text-gray-900 mb-2">${data.place.name}</h2>
+            <p class="text-gray-600">${data.place.city ? data.place.city + ', ' : ''}${data.place.country}</p>
+          </div>
+
+          <!-- Brutal Summary -->
+          <div class="mb-8 p-6 bg-gray-50 rounded-lg">
+            <p class="text-lg text-gray-800 leading-relaxed">${data.summary.brutal}</p>
+          </div>
+
+          <!-- Risk Indicators -->
+          <div class="mb-8 grid grid-cols-3 gap-4">
+            ${renderRiskIndicator('Experience', data.risk.experience)}
+            ${renderRiskIndicator('Logistics', data.risk.logistics)}
+            ${data.risk.safety !== 'not_applicable' ? renderRiskIndicator('Safety', data.risk.safety) : ''}
+          </div>
+      `;
+
+      // Sections (only if data_strength !== 'insufficient')
+      const sections = [];
+      if (data.sections.real_value?.data_strength !== 'insufficient') {
+        sections.push({ title: 'Real value', data: data.sections.real_value });
+      }
+      if (data.sections.context?.data_strength !== 'insufficient') {
+        sections.push({ title: 'Context', data: data.sections.context });
+      }
+      if (data.sections.hidden_costs?.data_strength !== 'insufficient') {
+        sections.push({ title: 'Hidden costs', data: data.sections.hidden_costs });
+      }
+      if (data.sections.concrete_risks?.data_strength !== 'insufficient') {
+        sections.push({ title: 'Concrete risks', data: data.sections.concrete_risks });
+      }
+
+      sections.forEach(section => {
+        html += renderSection(section.title, section.data.points);
+      });
+
+      // Fit
+      if (data.fit) {
+        if (data.fit.not_for_you_if?.length > 0) {
+          html += `
+            <div class="mb-6">
+              <h3 class="text-lg font-medium text-gray-900 mb-3">Not for you if</h3>
+              <ul class="space-y-2">
+                ${data.fit.not_for_you_if.map(item => `<li class="text-gray-700 pl-4 border-l-2 border-red-300">${item}</li>`).join('')}
+              </ul>
+            </div>
+          `;
+        }
+
+        if (data.fit.good_choice_if?.length > 0) {
+          html += `
+            <div class="mb-6">
+              <h3 class="text-lg font-medium text-gray-900 mb-3">Good choice if</h3>
+              <ul class="space-y-2">
+                ${data.fit.good_choice_if.map(item => `<li class="text-gray-700 pl-4 border-l-2 border-green-300">${item}</li>`).join('')}
+              </ul>
+            </div>
+          `;
+        }
+      }
+
+      // Impact
+      if (data.impact) {
+        html += `
+          <div class="mb-6 grid grid-cols-2 gap-4">
+            ${data.impact.energy_required ? `
+              <div>
+                <p class="text-sm text-gray-600 mb-1">Energy required</p>
+                <p class="text-gray-900 font-medium capitalize">${data.impact.energy_required}</p>
+              </div>
+            ` : ''}
+            ${data.impact.frustration_potential ? `
+              <div>
+                <p class="text-sm text-gray-600 mb-1">Frustration potential</p>
+                <p class="text-gray-900 font-medium capitalize">${data.impact.frustration_potential}</p>
+              </div>
+            ` : ''}
+          </div>
+        `;
+      }
+
+      // Assumptions
+      if (data.assumptions) {
+        if (data.assumptions.common_assumptions?.length > 0) {
+          html += renderSection('Common assumptions', data.assumptions.common_assumptions);
+        }
+        if (data.assumptions.when_assumptions_break?.length > 0) {
+          html += renderSection('When assumptions break', data.assumptions.when_assumptions_break);
+        }
+      }
+
+      // Alternatives
+      if (data.alternatives?.suggested?.length > 0 || data.alternatives?.note) {
+        html += `<div class="mb-6">`;
+        if (data.alternatives.suggested.length > 0) {
+          html += `
+            <h3 class="text-lg font-medium text-gray-900 mb-3">Alternatives</h3>
+            <ul class="space-y-1 mb-2">
+              ${data.alternatives.suggested.map(item => `<li class="text-gray-700">${item}</li>`).join('')}
+            </ul>
+          `;
+        }
+        if (data.alternatives.note) {
+          html += `<p class="text-sm text-gray-600">${data.alternatives.note}</p>`;
+        }
+        html += `</div>`;
+      }
+
+      // Closing
+      if (data.closing?.text) {
+        html += `
+          <div class="mb-8 p-6 bg-amber-50 rounded-lg">
+            <p class="text-gray-800 leading-relaxed italic">${data.closing.text}</p>
+          </div>
+        `;
+      }
+
+      // Meta
+      html += `
+          <div class="text-sm text-gray-500 mb-6">
+            <p>Confidence: ${data.summary.confidence} · Source: ${formatSourceType(data.meta.source_type)} · Updated: ${formatDate(data.meta.last_updated)}</p>
+          </div>
+
+          <!-- Close button -->
+          <button
+            onclick="closeModal()"
+            class="w-full bg-gray-800 hover:bg-gray-700 text-white font-medium px-6 py-3 rounded-lg transition-colors"
+          >
+            Close
+          </button>
+        </div>
+      `;
+
+      modal.innerHTML = html;
+      modalContainer.classList.remove('hidden');
+    }
+
+    // Show Not Found modal
+    function showNotFoundModal() {
+      const modal = modalContainer.querySelector('.bg-white');
+
+      modal.innerHTML = `
+        <div class="p-8 text-center">
+          <div class="mb-6">
+            <p class="text-xl text-gray-800 leading-relaxed">
+              We don't have enough reliable information to give you a clear picture of this place.
+            </p>
+          </div>
+
+          <button
+            onclick="closeModal()"
+            class="bg-amber-100 hover:bg-amber-200 text-gray-800 font-medium px-8 py-3 rounded-lg transition-colors"
+          >
+            Go back
+          </button>
+        </div>
+      `;
+
+      modalContainer.classList.remove('hidden');
+    }
+
+    // Helper: Render section
+    function renderSection(title, points) {
+      if (!points || points.length === 0) return '';
+
+      return `
+        <div class="mb-6">
+          <h3 class="text-lg font-medium text-gray-900 mb-3">${title}</h3>
+          <ul class="space-y-2">
+            ${points.map(point => `<li class="text-gray-700 pl-4 border-l-2 border-gray-300">${point}</li>`).join('')}
+          </ul>
+        </div>
+      `;
+    }
+
+    // Helper: Render risk indicator
+    function renderRiskIndicator(label, level) {
+      const colors = {
+        low: 'bg-green-100 text-green-800',
+        medium: 'bg-amber-100 text-amber-800',
+        high: 'bg-red-100 text-red-800'
+      };
+
+      return `
+        <div class="text-center p-3 rounded-lg ${colors[level] || 'bg-gray-100 text-gray-800'}">
+          <p class="text-xs text-gray-600 mb-1">${label}</p>
+          <p class="font-medium capitalize">${level}</p>
+        </div>
+      `;
+    }
+
+    // Helper: Format source type
+    function formatSourceType(type) {
+      return type.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+    }
+
+    // Helper: Format date
+    function formatDate(dateString) {
+      const date = new Date(dateString);
+      return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
+    }
+
+    // Close modal
+    function closeModal() {
+      modalContainer.classList.add('hidden');
+      inputScreen.classList.remove('hidden');
+      placeInput.value = '';
+    }
+
+    // Event listeners
+    checkButton.addEventListener('click', handleSearch);
+    placeInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        handleSearch();
+      }
+    });
+
+    // Close modal on background click
+    modalContainer.addEventListener('click', (e) => {
+      if (e.target === modalContainer) {
+        closeModal();
+      }
+    });
+  </script>
+</body>
+</html>

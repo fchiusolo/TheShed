@@ -1,6 +1,6 @@
 // mock-data.js
 // Static mock data for Reality Check MVP
-// This file intentionally contains a very small dataset
+// This dataset is intentionally small and manually curated
 
 const REALITY_CHECKS = [
   {
@@ -17,50 +17,50 @@ const REALITY_CHECKS = [
       safety: "high"
     },
     summary: {
-      brutal: "Arrivarci è complicato e quello che trovi non corrisponde alle aspettative create online.",
+      brutal: "Getting there is complicated and the place does not match the expectations created online.",
       confidence: "high"
     },
     sections: {
       real_value: {
         points: [
-          "Non è un vero canyon, ma una formazione molto piccola",
-          "L’esperienza dura pochi minuti",
-          "Spesso affollato e poco curato"
+          "It is not a real canyon, but a very small rock formation",
+          "The visit lasts only a few minutes",
+          "Often crowded and poorly maintained"
         ],
         data_strength: "strong"
       },
       context: {
         points: [
-          "Necessario arrivare molto presto al mattino",
-          "Peggiora notevolmente nei weekend"
+          "You need to arrive very early in the morning",
+          "The experience worsens significantly on weekends"
         ],
         data_strength: "strong"
       },
       hidden_costs: {
         points: [
-          "Tempo elevato per raggiungerlo",
-          "Difficoltà di parcheggio"
+          "High time investment to reach the area",
+          "Parking is difficult and unreliable"
         ],
         data_strength: "strong"
       },
       concrete_risks: {
         points: [
-          "Percorsi pericolosi se si prende il sentiero sbagliato",
-          "Segnalazioni di furti e auto danneggiate"
+          "Dangerous paths if the wrong trail is taken",
+          "Reports of theft and damaged cars"
         ],
         data_strength: "strong"
       }
     },
     fit: {
       not_for_you_if: [
-        "Ti aspetti una grande meraviglia naturale",
-        "Hai poco tempo o margine di errore",
-        "Non sei ben attrezzato"
+        "You expect a major natural wonder",
+        "You have limited time or flexibility",
+        "You are not well equipped"
       ],
       good_choice_if: [
-        "Sei consapevole dei limiti",
-        "Cerchi solo uno spot fotografico",
-        "Hai esperienza in percorsi simili"
+        "You are aware of its limitations",
+        "You are only looking for a photo spot",
+        "You have experience with similar terrain"
       ]
     },
     impact: {
@@ -69,20 +69,20 @@ const REALITY_CHECKS = [
     },
     assumptions: {
       common_assumptions: [
-        "Assomiglia al Grand Canyon",
-        "È facile da raggiungere",
-        "Vale la deviazione"
+        "It looks like the Grand Canyon",
+        "It is easy to reach",
+        "It is worth the detour"
       ],
       when_assumptions_break: [
-        "Quando si scopre che il luogo è molto piccolo e difficile da raggiungere"
+        "When you realize how small and difficult to access the site actually is"
       ]
     },
     alternatives: {
       suggested: ["Roque Nublo"],
-      note: "Sull’isola esistono alternative più accessibili e sicure."
+      note: "There are safer and more accessible alternatives on the island."
     },
     closing: {
-      text: "Il problema non è andarci. È andarci senza sapere a cosa si va incontro.",
+      text: "The issue is not going. It is going without knowing what to expect.",
       tone: "direct"
     },
     meta: {
@@ -106,29 +106,29 @@ const REALITY_CHECKS = [
       safety: "medium"
     },
     summary: {
-      brutal: "È un vicolo corto con qualche pianta, reso famoso quasi esclusivamente dai social.",
+      brutal: "A very short street with minimal decoration, made famous almost exclusively by social media.",
       confidence: "high"
     },
     sections: {
       real_value: {
         points: [
-          "Strada molto breve",
-          "Decorazioni minime",
-          "Nessun elemento particolarmente distintivo"
+          "Very short street",
+          "Minimal decorations",
+          "Nothing particularly distinctive"
         ],
         data_strength: "strong"
       },
       context: {
         points: [
-          "Fuori dal centro principale",
-          "Atmosfera spenta in certi periodi dell’anno"
+          "Located outside the main tourist center",
+          "Atmosphere can feel empty depending on the season"
         ],
         data_strength: "strong"
       },
       hidden_costs: {
         points: [
-          "Tempo perso per raggiungerla",
-          "Opportunity cost rispetto ad altre zone di Lisbona"
+          "Time wasted reaching the area",
+          "High opportunity cost compared to other parts of Lisbon"
         ],
         data_strength: "strong"
       },
@@ -139,12 +139,12 @@ const REALITY_CHECKS = [
     },
     fit: {
       not_for_you_if: [
-        "Devi fare uno spostamento dedicato",
-        "Hai poco tempo in città"
+        "You need to go out of your way to reach it",
+        "You have limited time in the city"
       ],
       good_choice_if: [
-        "Ci passi già vicino",
-        "Non hai aspettative"
+        "You are already nearby",
+        "You have no expectations"
       ]
     },
     impact: {
@@ -153,19 +153,19 @@ const REALITY_CHECKS = [
     },
     assumptions: {
       common_assumptions: [
-        "È una vera attrazione",
-        "Vale una deviazione"
+        "It is a real attraction",
+        "It is worth a detour"
       ],
       when_assumptions_break: [
-        "Quando ci si rende conto che è solo una strada qualunque"
+        "When you realize it is just an ordinary street"
       ]
     },
     alternatives: {
       suggested: [],
-      note: "Lisbona offre molte strade più autentiche e interessanti."
+      note: "Lisbon offers many more authentic and interesting streets."
     },
     closing: {
-      text: "Il rischio non è perdersela, ma perdere tempo quando c’è molto di meglio.",
+      text: "The risk is not missing it, but wasting time when there is much better nearby.",
       tone: "direct"
     },
     meta: {
@@ -189,47 +189,47 @@ const REALITY_CHECKS = [
       safety: "not_applicable"
     },
     summary: {
-      brutal: "Senza una strategia chiara, il museo risulta dispersivo, stancante e frustrante.",
+      brutal: "Without a clear strategy, the visit becomes overwhelming, exhausting, and frustrating.",
       confidence: "high"
     },
     sections: {
       real_value: {
         points: [
-          "Collezione enorme",
-          "Difficile da comprendere senza guida o preparazione"
+          "Massive collection",
+          "Difficult to understand without preparation or a guide"
         ],
         data_strength: "strong"
       },
       context: {
         points: [
-          "Affollamento costante",
-          "Sale che chiudono prima dell’orario ufficiale"
+          "Constant overcrowding",
+          "Some areas close before official closing time"
         ],
         data_strength: "strong"
       },
       hidden_costs: {
         points: [
-          "Tempo perso in file",
-          "Stanchezza mentale e fisica"
+          "Long queues",
+          "High physical and mental fatigue"
         ],
         data_strength: "strong"
       },
       concrete_risks: {
         points: [
-          "Impossibilità di entrare senza prenotazione online",
-          "Visita compromessa se si entra tardi"
+          "No entry without online reservation",
+          "Late entry significantly limits the visit"
         ],
         data_strength: "strong"
       }
     },
     fit: {
       not_for_you_if: [
-        "Vuoi una visita spontanea",
-        "Hai poche ore a disposizione"
+        "You want a spontaneous visit",
+        "You only have a few hours"
       ],
       good_choice_if: [
-        "Pianifichi in anticipo",
-        "Sai cosa vuoi vedere"
+        "You plan ahead",
+        "You know exactly what you want to see"
       ]
     },
     impact: {
@@ -238,11 +238,11 @@ const REALITY_CHECKS = [
     },
     assumptions: {
       common_assumptions: [
-        "È un museo come gli altri",
-        "Basta entrare e girare"
+        "It is like any other museum",
+        "You can just walk in and explore"
       ],
       when_assumptions_break: [
-        "Quando ci si rende conto delle dimensioni e della disorganizzazione"
+        "When you realize how large and disorganized it feels"
       ]
     },
     alternatives: {
@@ -250,7 +250,7 @@ const REALITY_CHECKS = [
       note: ""
     },
     closing: {
-      text: "Il Louvre va affrontato con un piano. Senza, rischia di essere solo estenuante.",
+      text: "The Louvre requires a plan. Without one, it can easily become draining.",
       tone: "neutral"
     },
     meta: {
@@ -274,48 +274,48 @@ const REALITY_CHECKS = [
       safety: "high"
     },
     summary: {
-      brutal: "Trappola per turisti molto circoscritta, con rischi reali fuori dal percorso principale.",
+      brutal: "A very limited tourist area with real safety risks outside the main path.",
       confidence: "high"
     },
     sections: {
       real_value: {
         points: [
-          "Area molto piccola",
-          "Esperienza fortemente costruita"
+          "Very small area",
+          "Highly staged experience"
         ],
         data_strength: "strong"
       },
       context: {
         points: [
-          "Funziona solo in orari turistici",
-          "Peggiora rapidamente fuori dal percorso principale"
+          "Works only during peak tourist hours",
+          "Conditions worsen quickly outside the main route"
         ],
         data_strength: "strong"
       },
       hidden_costs: {
         points: [
-          "Prezzi molto elevati",
-          "Pressioni continue da venditori"
+          "Overpriced food and souvenirs",
+          "Constant pressure from vendors"
         ],
         data_strength: "strong"
       },
       concrete_risks: {
         points: [
-          "Zone limitrofe percepite come pericolose",
-          "Difficoltà a trovare trasporti sicuri"
+          "Unsafe surrounding areas",
+          "Difficulty finding reliable transportation"
         ],
         data_strength: "strong"
       }
     },
     fit: {
       not_for_you_if: [
-        "Vuoi esplorare liberamente",
-        "Viaggi da solo",
-        "Cerchi autenticità"
+        "You want to explore freely",
+        "You are traveling alone",
+        "You are looking for authenticity"
       ],
       good_choice_if: [
-        "Resti poco tempo",
-        "Sai che è solo una parentesi turistica"
+        "You keep the visit short",
+        "You know it is purely a tourist stop"
       ]
     },
     impact: {
@@ -324,11 +324,11 @@ const REALITY_CHECKS = [
     },
     assumptions: {
       common_assumptions: [
-        "È un quartiere da visitare liberamente",
-        "È sicuro perché turistico"
+        "It is a neighborhood you can explore freely",
+        "It is safe because it is touristy"
       ],
       when_assumptions_break: [
-        "Quando ci si allontana dal percorso guidato"
+        "When you step outside the controlled tourist area"
       ]
     },
     alternatives: {
@@ -336,7 +336,7 @@ const REALITY_CHECKS = [
       note: ""
     },
     closing: {
-      text: "Non è pericoloso in assoluto, ma lo diventa se lo vivi come un quartiere normale.",
+      text: "It is not dangerous by default, but it becomes risky if treated like a normal neighborhood.",
       tone: "direct"
     },
     meta: {
@@ -360,20 +360,20 @@ const REALITY_CHECKS = [
       safety: "low"
     },
     summary: {
-      brutal: "Le poche critiche riflettono gusti personali, non problemi strutturali del luogo.",
+      brutal: "The few critical reviews reflect personal preferences rather than structural issues.",
       confidence: "medium"
     },
     sections: {
       real_value: {
         points: [
-          "Esperienza naturale e isolata",
-          "Ritmo lento e minimale"
+          "Remote and natural environment",
+          "Slow and minimal lifestyle"
         ],
         data_strength: "strong"
       },
       context: {
         points: [
-          "Adatto solo a chi ama natura e semplicità"
+          "Suitable only for people who enjoy nature and simplicity"
         ],
         data_strength: "strong"
       },
@@ -388,12 +388,12 @@ const REALITY_CHECKS = [
     },
     fit: {
       not_for_you_if: [
-        "Cerchi comfort e servizi",
-        "Hai bisogno di molte attività"
+        "You need comfort and services",
+        "You expect many activities"
       ],
       good_choice_if: [
-        "Ami isolamento e natura",
-        "Accetti semplicità e lentezza"
+        "You enjoy isolation and nature",
+        "You are comfortable with simplicity and slowness"
       ]
     },
     impact: {
@@ -402,7 +402,7 @@ const REALITY_CHECKS = [
     },
     assumptions: {
       common_assumptions: [
-        "È remoto e spartano"
+        "It is remote and basic"
       ],
       when_assumptions_break: []
     },
@@ -411,7 +411,7 @@ const REALITY_CHECKS = [
       note: ""
     },
     closing: {
-      text: "Funziona perché non cerca di piacere a tutti.",
+      text: "It works precisely because it does not try to please everyone.",
       tone: "neutral"
     },
     meta: {
@@ -422,5 +422,6 @@ const REALITY_CHECKS = [
   }
 ];
 
-// Export for usage in script.js
-// (adjust if using modules or global scope)
+// Export or attach to window depending on usage
+// Example:
+// window.REALITY_CHECKS = REALITY_CHECKS;

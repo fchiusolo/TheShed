@@ -11,6 +11,11 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon.png">
 
+    <!-- Google Fonts - Comic Neue -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap" rel="stylesheet">
+
     <!-- TailwindCSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -20,7 +25,7 @@
         theme: {
           extend: {
             fontFamily: {
-              sans: ['-apple-system', 'BlinkMacSystemFont', 'San Francisco',
+              sans: ['Comic Neue', '-apple-system', 'BlinkMacSystemFont', 'San Francisco',
                      'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif']
             },
             colors: {
@@ -33,6 +38,13 @@
               'border-gray': '#E0DDD9',
               'golden-yellow': '#F4C45E',
               'soft-blue-gray': '#8FA8BC'
+            },
+            boxShadow: {
+              'comic': '4px 4px 0px 0px rgba(58, 58, 58, 1)',
+              'comic-hover': '2px 2px 0px 0px rgba(58, 58, 58, 1)',
+            },
+            borderWidth: {
+              '3': '3px',
             }
           }
         }
@@ -69,10 +81,10 @@
 
     <!-- Navigation -->
     <nav class="fixed top-0 right-0 z-50 p-4 sm:p-6">
-      <ul class="flex gap-3 text-sm sm:gap-4 sm:text-base">
-        <li><a href="#about" class="px-4 py-2 bg-light-cream/90 text-charcoal hover:bg-warm-orange hover:text-white rounded-full transition-all">About</a></li>
-        <li><a href="#projects" class="px-4 py-2 bg-light-cream/90 text-charcoal hover:bg-warm-orange hover:text-white rounded-full transition-all">Projects</a></li>
-        <li><a href="#contact" class="px-4 py-2 bg-light-cream/90 text-charcoal hover:bg-warm-orange hover:text-white rounded-full transition-all">Contact</a></li>
+      <ul class="flex gap-3 text-base sm:gap-4 sm:text-lg">
+        <li><a href="#about" class="px-4 py-2 bg-light-cream/90 text-charcoal hover:bg-warm-orange hover:text-white rounded-full border-3 border-charcoal shadow-comic hover:shadow-comic-hover transition-all">About</a></li>
+        <li><a href="#projects" class="px-4 py-2 bg-light-cream/90 text-charcoal hover:bg-warm-orange hover:text-white rounded-full border-3 border-charcoal shadow-comic hover:shadow-comic-hover transition-all">Projects</a></li>
+        <li><a href="#contact" class="px-4 py-2 bg-light-cream/90 text-charcoal hover:bg-warm-orange hover:text-white rounded-full border-3 border-charcoal shadow-comic hover:shadow-comic-hover transition-all">Contact</a></li>
       </ul>
     </nav>
 
@@ -87,7 +99,7 @@
           loading="eager"
         />
         <!-- Scroll Down Button -->
-        <a href="#about" class="absolute bottom-8 left-0 right-0 mx-auto w-14 h-14 flex items-center justify-center bg-light-cream/90 hover:bg-warm-orange rounded-full transition-all scroll-bounce group">
+        <a href="#about" class="absolute bottom-8 left-0 right-0 mx-auto w-14 h-14 flex items-center justify-center bg-light-cream/90 hover:bg-warm-orange rounded-full border-4 border-charcoal shadow-comic hover:shadow-comic-hover transition-all scroll-bounce group">
           <svg class="w-6 h-6 stroke-charcoal group-hover:stroke-white transition-colors" fill="none" stroke-width="3" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 5v14M19 12l-7 7-7-7"/>
           </svg>
@@ -97,8 +109,8 @@
       <!-- About Section -->
       <section id="about" class="px-6 py-20">
         <div class="max-w-2xl mx-auto">
-          <h2 class="text-2xl sm:text-3xl mb-6 text-center text-charcoal">About The Shed</h2>
-          <div class="space-y-4 text-base sm:text-lg leading-relaxed text-warm-gray">
+          <h2 class="text-3xl sm:text-4xl mb-6 text-center text-charcoal font-bold">About The Shed</h2>
+          <div class="space-y-4 text-lg sm:text-xl leading-relaxed text-warm-gray">
             <p>The Shed is a place where software tools are built to solve common problems.</p>
             <p>Ideas usually start small: noticing something that could work better, taking it apart, and trying to put it back together in a simpler way. Projects focus on turning those ideas into tools that are practical, focused, and ready to be used.</p>
             <p>The Shed exists for the joy of building things that work. It approaches problems with curiosity, experimentation, and a hands-on mindset, aiming to create solutions that feel thoughtful and straightforward.</p>
@@ -110,25 +122,25 @@
       <!-- Projects Section -->
       <section id="projects" class="px-6 py-20">
         <div class="max-w-4xl mx-auto">
-          <h2 class="text-2xl sm:text-3xl mb-12 text-center text-charcoal">Projects</h2>
+          <h2 class="text-3xl sm:text-4xl mb-12 text-center text-charcoal font-bold">Projects</h2>
           <div class="grid gap-6 md:grid-cols-2 md:gap-8">
 
             <!-- HomeOps -->
-            <article class="border border-border-gray p-6 rounded-lg bg-white shadow-md hover:shadow-xl transition-shadow">
-              <h3 class="text-xl mb-3 text-charcoal">HomeOps</h3>
-              <p class="text-warm-gray mb-4">Track home assets, warranties, and maintenance in one private, offline-first app. Get reminders before it's too late.</p>
-              <div class="text-sm">
-                <a href="projects/homeops/" class="text-sky-blue hover:text-warm-orange transition-colors">Learn more →</a>
+            <article class="flex flex-col border border-border-gray p-6 rounded-lg bg-white shadow-md hover:shadow-xl transition-shadow">
+              <h3 class="text-2xl mb-3 text-charcoal font-bold">HomeOps</h3>
+              <p class="text-warm-gray mb-4 text-base sm:text-lg">Keep track of what you own, when warranties expire, and when things need maintenance.</p>
+              <div class="text-base mt-auto">
+                <a href="projects/homeops/" class="text-sky-blue hover:text-warm-orange font-semibold underline decoration-2 decoration-sky-blue/50 hover:decoration-warm-orange transition-colors">Learn more →</a>
               </div>
             </article>
 
-            <!-- Reality Check (MVP) -->
-            <article class="relative border-2 border-dashed border-border-gray/60 p-6 rounded-lg bg-light-cream/50 hover:bg-light-cream transition-all">
-              <span class="absolute top-3 right-3 px-2 py-1 text-xs font-medium text-warm-gray/70 bg-border-gray/40 rounded">MVP</span>
-              <h3 class="text-xl mb-3 text-warm-gray">Reality Check</h3>
-              <p class="text-warm-gray/80 mb-4">Honest reality checks for places you're doubting</p>
-              <div class="text-sm">
-                <a href="projects/realitycheck/" class="text-soft-blue-gray hover:text-warm-orange transition-colors">Step into The Shed →</a>
+            <!-- Reality Check (Prototype) -->
+            <article class="relative flex flex-col border border-border-gray p-6 rounded-lg bg-white shadow-md hover:shadow-xl transition-shadow">
+              <span class="absolute top-3 right-3 px-2 py-1 text-xs font-medium text-warm-gray bg-golden-yellow/80 rounded">Prototype</span>
+              <h3 class="text-2xl mb-3 text-charcoal font-bold">Reality Check</h3>
+              <p class="text-warm-gray mb-4 text-base sm:text-lg">Honest reality checks for places you're doubting</p>
+              <div class="text-base mt-auto">
+                <a href="projects/realitycheck/" class="text-sky-blue hover:text-warm-orange font-semibold underline decoration-2 decoration-sky-blue/50 hover:decoration-warm-orange transition-colors">Step into The Shed →</a>
               </div>
             </article>
 
@@ -139,11 +151,11 @@
       <!-- Contact Section -->
       <section id="contact" class="px-6 py-20">
         <div class="max-w-xl mx-auto text-center">
-          <h2 class="text-2xl sm:text-3xl mb-6 text-center text-charcoal">Contact</h2>
-          <p class="text-base sm:text-lg mb-6 text-warm-gray">
+          <h2 class="text-3xl sm:text-4xl mb-6 text-center text-charcoal font-bold">Contact</h2>
+          <p class="text-lg sm:text-xl mb-6 text-warm-gray">
             For questions, feedback, or potential collaborations:
           </p>
-          <a href="mailto:hi.theshed@gmail.com" class="text-base sm:text-lg text-sky-blue hover:text-warm-orange transition-colors">
+          <a href="mailto:hi.theshed@gmail.com" class="text-lg sm:text-xl text-sky-blue hover:text-warm-orange font-semibold underline decoration-2 decoration-sky-blue/50 hover:decoration-warm-orange transition-colors">
             hi.theshed@gmail.com
           </a>
         </div>
@@ -152,7 +164,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="py-8 text-center text-sm text-warm-gray">
+    <footer class="py-8 text-center text-base text-warm-gray">
       <p>The Shed — A small workshop for independent software projects</p>
     </footer>
 

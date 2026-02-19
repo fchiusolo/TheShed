@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lumen - A guided field companion for telescope observation sessions">
+    <title>Lumen - The Shed</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../favicon.png">
+
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['-apple-system', 'BlinkMacSystemFont', 'San Francisco',
+                     'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif']
+            },
+            colors: {
+              'sky-blue': '#7BA3C0',
+              'warm-orange': '#E89B6C',
+              'sage-green': '#6B9B7E',
+              'charcoal': '#3A3A3A',
+              'warm-gray': '#6B6B6B',
+              'light-cream': '#F8F6F3',
+              'border-gray': '#E0DDD9',
+              'golden-yellow': '#F4C45E',
+              'soft-blue-gray': '#8FA8BC',
+              'lumen-dark': '#14120F'
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="antialiased bg-light-cream text-charcoal">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 z-50 p-4 sm:p-6">
+      <a href="../../" class="text-sm text-sky-blue hover:text-warm-orange transition-colors">← Back to The Shed</a>
+    </nav>
+
+    <main class="min-h-screen px-6 py-20">
+      <article class="max-w-3xl mx-auto pt-12">
+        <div class="bg-white rounded-lg shadow-lg p-8 sm:p-12 border-t-4 border-lumen-dark">
+          <!-- Header -->
+          <div class="mb-8">
+            <h1 class="text-3xl sm:text-4xl mb-2 text-lumen-dark font-bold">Lumen</h1>
+            <p class="text-lg text-warm-gray">A guided field companion for telescope observation</p>
+          </div>
+
+          <div class="space-y-8 text-base sm:text-lg leading-relaxed text-warm-gray">
+            <section>
+              <h2 class="text-xl sm:text-2xl mb-4 text-lumen-dark font-semibold">What it is</h2>
+              <p class="mb-4">Lumen is a beginner-focused astronomy assistant designed for real observation sessions. It guides you from setup to observation — reducing the friction between owning a telescope and actually using it well.</p>
+
+              <ul class="space-y-3 ml-6">
+                <li class="flex items-start">
+                  <span class="text-lumen-dark mr-3">•</span>
+                  <span>Step-by-step telescope setup guidance</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-lumen-dark mr-3">•</span>
+                  <span>Select an object and get intelligent eyepiece recommendations</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-lumen-dark mr-3">•</span>
+                  <span>Recommendations based on your telescope profile</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-lumen-dark mr-3">•</span>
+                  <span>Focused Observation Mode for time at the eyepiece</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-lumen-dark mr-3">•</span>
+                  <span>No accounts, no cloud, no distractions</span>
+                </li>
+              </ul>
+            </section>
+
+            <section>
+              <h2 class="text-xl sm:text-2xl mb-4 text-lumen-dark font-semibold">Why it exists</h2>
+              <p class="mt-4">Most people who buy a telescope use it once, get frustrated, and put it away. Lumen exists to close that gap. It is not a sky map or an encyclopedia — it's a quiet companion that helps you set up correctly, choose the right eyepiece, and actually see something meaningful on your first try and every time after.</p>
+            </section>
+
+            <section>
+              <h2 class="text-xl sm:text-2xl mb-4 text-lumen-dark font-semibold">Availability</h2>
+              <p>Lumen is currently in development. It will be available on the App Store for iPhone.</p>
+            </section>
+          </div>
+        </div>
+      </article>
+
+      <!-- Legal Links -->
+      <div class="max-w-3xl mx-auto mt-8 text-center">
+        <div class="flex gap-6 justify-center text-sm">
+          <a href="privacy.html" class="text-sky-blue hover:text-warm-orange transition-colors">Privacy Policy</a>
+          <a href="support.html" class="text-sky-blue hover:text-warm-orange transition-colors">Support</a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center text-sm text-warm-gray">
+      <p>The Shed — A small workshop for independent software projects</p>
+    </footer>
+
+</body>
+</html>
